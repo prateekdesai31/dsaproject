@@ -54,8 +54,13 @@ void del_rec() {
 
 	} // END OF SWITCH CASE
 
+<<<<<<< HEAD
 	if( flag != 1 )
 		printf("\n RECORD NOT FOUND.\n\n ");
+=======
+	if( flag == 0 )
+		printf("\n RECORD NOT FOUND. ");
+>>>>>>> 04fb0dd554674dedba20d87c00478c663593a6d7
 
 	fclose(fp);
 	fclose(tmp);
