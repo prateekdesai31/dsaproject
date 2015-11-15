@@ -1,3 +1,19 @@
+/*Deletes records form nesnasmarket.dat
+    Copyright (C) 2015 Prateek Desai
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -47,15 +63,15 @@ void del_rec() {
 				else {
 					fwrite(&m,sizeof(market),1,tmp);
 				}
-			} // END OF WHILE 
+			} // END OF WHILE
 			} // END OF CASE 2
 
 		break;
 
 	} // END OF SWITCH CASE
 
-	if( flag != 1 )
-		printf("\n RECORD NOT FOUND.\n\n ");
+	if( flag == 0 )
+		printf("\n RECORD NOT FOUND. ");
 
 	fclose(fp);
 	fclose(tmp);
@@ -64,14 +80,14 @@ void del_rec() {
 
 } // END OF DEL_REC
 
-	
-	
 
 
 
 
 
 
-			
+
+
+
 
 

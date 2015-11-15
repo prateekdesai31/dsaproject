@@ -1,10 +1,26 @@
+/*modifies records in nesnasmarket.dat
+    Copyright (C) 2015 Prateek Desai
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
 #include"market.h"
 
 void mod_rec() {	//try to take a pararmeter
-	
+
 	market m;
 	FILE *fp;
 	fp = fopen("nesnasmarket","r+b");
@@ -25,16 +41,18 @@ void mod_rec() {	//try to take a pararmeter
 						fseek(fp,(-1) * sizeof(market), SEEK_CUR);
 						printf("\n Please Enter The Product ID : ");
 	   					scanf("%d",&m.pno);
-	    					printf("\n Enter The Product Name : ");
+                        printf("\n Enter The Product Name : ");
 	   					scanf("%s",m.name);
 	   					printf("\n Enter The Price Of The Product : ");
 						scanf("%f",&m.price);
+						printf("\n Enter The Quantity : ");
+						scanf("%d",&m.qty);
 						fwrite(&m,sizeof(market),1,fp);
 						flag = 1;
-					
+
 					}
 				}
-			}		
+			}
 					break;
 
 		case 2: {
@@ -52,12 +70,12 @@ void mod_rec() {	//try to take a pararmeter
 						scanf("%f",&m.price);
 						fwrite(&m,sizeof(market),1,fp);
 						flag = 1;
-					
+
 					}
 				}
-			}	
+			}
 			break;
-					
+
 	} //END OF SWITCH
 
 	if( flag == 1 )

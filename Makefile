@@ -1,9 +1,9 @@
-try: admin.o writerec.o showprod.o readrec.o retdisc.o subtdisc.o partprod.o mod_rec.o del_rec.o
-	cc admin.o writerec.o showprod.o readrec.o retdisc.o subtdisc.o partprod.o mod_rec.o del_rec.o -o try 
+project: admin.o writerec.o showprod.o readrec.o retdisc.o subtdisc.o partprod.o mod_rec.o del_rec.o
+	cc admin.o writerec.o showprod.o readrec.o retdisc.o subtdisc.o partprod.o mod_rec.o del_rec.o -o project
 
 
-admin.o: admin.c market.h 
-	cc -c admin.c 
+admin.o: admin.c market.h
+	cc -c admin.c
 
 writerec.o: writerec.c market.h
 	cc -c writerec.c
